@@ -9,10 +9,22 @@
     <meta content="Nashu's Portfolio Website" property="og:description">
     <meta name="dmca-site-verification" content="ZDdYd3hocGRCYjljaDIrUFpJMzRkQT090">
     <meta name="theme-color" content="#303135">
+    <audio id="background-music" loop>
+  <source src="song.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<div id="music-controls">
+  <i id="music-icon" class="bx bx-headphone"></i>
+</div>
+    
+  
     
     <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl
+
     <title>Nashuu</title>
   </head>
   <body>
@@ -85,9 +97,9 @@
         <div class="home__container container grid">
           <div class="home__data">
             <span class="home__greeting">Welcome</span>
-            <h1 class="home__name"><sorrow id="0024">Nashuu</sorrow></h1>
+            <h1 class="home__name"><sorrow id="0024">Naaxsu</sorrow></h1>
             <h3 class="home__education">
-              Nashuu's useless portfolio
+              Naaxsu's useless website
             </h3>
 
             <img src="assets/img/image_2023-02-01_173423933.png" alt="Image">
@@ -257,64 +269,85 @@
             </div>
           </div>
         </div>
-      </section>
+      
+        <section class="overview section" id="overview">
+  <span class="section__subtitle">~</span>
+  <h2 class="section__title">Nashu's Birthday</h2>
+  <div class="anime__container">
+    <div class="anime__content">
+      <h3 class="anime__title">Time Left</h3>
+      <div class="countdown">
+                  <i class="bx bx-hourglass"></i>
+      <div id="countdown" class="countdown"></div>
+    </div>
+  </div>
+</section>
+<style>
+  .anime__container {
+    row-gap: 2rem;
+    padding-top: 1rem;
+  }
+
+  .anime__content {
+    background-color: var(--container-color);
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .anime__title {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    color: var(--first-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    color: var(--first-color);
+  }
+</style>
+
+         <script>
+    // Set the target date
+    var targetDate = new Date("2023-02-14 00:00:00");
+
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+      // Get today's date and time
+      var now = new Date().getTime();
+      
+      // Find the distance between now and the target date
+      var distance = targetDate - now;
+      
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      // Display the result in the element with id="countdown"
+      document.getElementById("countdown").innerHTML = days + " Days " + hours + "Hours " + minutes + "min " + seconds + "s ";
+      
+      // If the count down is finished, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "HAPPY BIRTHDAY NASHUU 🎂";
+      }
+    }, 1000);
+  </script>
 
       
            
-      </section>
-      <!-- vouch testimonials pgntn - @sosa#3400  -->
-      <section class="testimonial section">
-        <span class="section__subtitle"~\</span>
-        <h2 class="section__title">Friend</h2>
+     
 
-        <div class="testimonial__container container swiper">
-          <div class="swiper-wrapper">
-            <div class="testimonial__card swiper-slide">
-              <img src="assets/img/pfps/artworks-000380995395-w81nma-t500x500.jpg" alt class="testimonial__img">
-
-              <h3 class="testimonial__name">! . BuzZaRd ⸸
-#0129</h3>
-              <p class="testimonial__description">Developer & Owner of NORG</p>
-            </div>
-
-            <div class="testimonial__card swiper-slide">
-              <img src="assets/img/pfps/jin%20pfp.jpg" alt class="testimonial__img">
-
-              <h3 class="testimonial__name">jin#7777</h3>
-              <p class="testimonial__description">Owner</p>
-            </div>
-
-            <div class="testimonial__card swiper-slide">
-              <img src="assets/img/pfps/bodo%20pfp.png" alt class="testimonial__img">
-
-              <h3 class="testimonial__name">BoDo#0001</h3>
-              <p class="testimonial__description">Owner</p>
-            </div>
-
-            <div class="testimonial__card swiper-slide">
-              <img src="assets/img/pfps/fiji%20pfp.png" alt class="testimonial__img">
-
-              <h3 class="testimonial__name">fiji#1527</h3>
-              <p class="testimonial__description">Manager</p>
-            </div>
-            <div class="testimonial__card swiper-slide">
-              <img src="assets/img/pfps/guan%20pfp.png" alt class="testimonial__img">
-
-              <h3 class="testimonial__name">guan#6969</h3>
-              <p class="testimonial__description">Manager</p>
-            </div>
-
-            <div class="testimonial__card swiper-slide">
-              <img src="assets/img/pfps/gwallahs%20pfp.jpg" alt class="testimonial__img">
-
-              <h3 class="testimonial__name">Gwallahs#2002</h3>
-              <p class="testimonial__description">Exclusive Partner</p>
-            </div>
-          </div>
-
-          <div class="swiper-pagination"></div>
-        </div>
-      </section>
 
       <!-- contact - @sosa#3400 -->
       <section class="contact section" id="contact">
@@ -359,11 +392,14 @@
         </div>
       </section>
     </main>
-    <!-- footer - @sosa#3400-->
+    <!-- footer - @sosa#3400
     <footer class="footer">
       <div class="container">
         <div class="row">
           <div class="footer-col">
+              <li><a href="#">Instagram</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Github</a></li>
             
             </ul>
           </div>
@@ -377,9 +413,11 @@
         </div>
       </div>
     </footer>
+  </style>
     <script src="assets/js/scrollreveal.min.js"></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/mixitup.min.js"></script>
     <script src="assets/js/main.js"></script>
+    -->
   </body>
 </html>
