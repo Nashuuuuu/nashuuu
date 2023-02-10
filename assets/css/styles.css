@@ -43,7 +43,7 @@ from: daddy SoSA▓░░░░░░░░░░░░░░░░░░░░�
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: #303135;
+  background-color: #C8A2C8;
   background-repeat: no-repeat;
   background-size: 20%;
   background-position: 50% 50%;
@@ -63,11 +63,12 @@ da main clrs- @sosa#3400 */
 
   --first-color: hsl(var(--first-hue), var(--sat), var(--lig));
   --first-color-alt: hsl(var(--first-hue), var(--sat), 71%); /* -4% */
-  --title-color: hsl(var(--second-hue), 15%, 95%);
-  --text-color: hsl(var(--second-hue), 8%, 75%);
-  --text-color-light: hsl(var(--second-hue), 4%, 55%);
-  --body-color: #303135;
-  --container-color: #29292d;
+  --title-color: hsl(0, 0%, 0%);
+--text-color: hsl(0, 0%, 0%);
+--text-color-light: hsl(0, 0%, 0%);
+
+  --body-color: #967BB6;
+  --container-color: #E6E6FA;
 
   /* 
 font init - @sosa#3400 */
@@ -899,7 +900,7 @@ support  - @sosa#3400 */
 /* 
 footer - @sosa#3400 */
 .footer {
-  background-color: var(--first-color);
+  background-color: #E6E6FA;
 }
 
 .footer__container {
@@ -944,6 +945,7 @@ footer - @sosa#3400 */
   color: var(--container-color);
   text-align: center;
   font-size: var(--smaller-font-size);
+  
 }
 
 /* 
@@ -1201,7 +1203,7 @@ ul {
   list-style: none;
 }
 .footer {
-  background-color: #24262b;
+  background-color: #9393bf;
   padding: 70px 0;
 }
 .footer-col {
@@ -1273,6 +1275,23 @@ ftr ui  - @sosa#3400 */
     width: 100%;
   }
 }
+/* Song */
+
+#background-music {
+  display: block;
+}
+
+#music-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+#music-icon {
+  font-size: 24px;
+}
+
 /* 
 ╔══╦═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
 from: daddy SoSA▓░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█  get your own src skid 🤡  █░░▓
