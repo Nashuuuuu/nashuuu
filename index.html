@@ -1,385 +1,150 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="og:title" content="Nashu Portfolio">
-    <meta content="~ Nashu" property="og:site_name">
-    <meta content="Nashu's Portfolio Website" property="og:description">
-    <meta name="dmca-site-verification" content="ZDdYd3hocGRCYjljaDIrUFpJMzRkQT090">
-    <meta name="theme-color" content="#303135">
-    
-    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <title>Nashuu</title>
-  </head>
-  <body>
-    <header class="header" id="header">
-      <nav class="nav container">
-        <a href="#" class="nav__logo">|</a>
+  
+<head>
+<title> Nashuu</title>
+<!--<link rel="icon" href="https://avatars.githubusercontent.com/u/88819188?v=4">-->
+</head>
+  
+<body>
+<div class="container">
+<!--<audio controls hidden loop>
+    <source src="videoplayback.webm" type="audio/mpeg">
+</audio>-->
+<div class="text" style="filter: drop-shadow(#ffffff 0px 0px 9px);"><span class="dud">_</span><span class="dud">@</span>th<span class="dud">\</span>b.c<span class="dud">]</span>m<span class="dud">{</span>C<span class="dud">^</span>p<span class="dud">&gt;</span><span class="dud">\</span>r<span class="dud">\</span><span class="dud">^</span>F</div>
+</div>
+  
+<script>
+    // var CTE = {};
+    //CTE.callback = () => {
+     // var aud = document.getElementsByTagName("audio")[0];
+    //  aud.volume = .3;
+     // aud.play();
+  //  }
 
-        <div class="nav__menu">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#home" class="nav__link active-link">
-                <i class="bx bx-home-alt nav__icon"></i>
-              </a>
-            </li>
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-           
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-            <li class="nav__item">
-              <a href="#overview" class="nav__link">
-                <i class="bx bx-book nav__icon"></i>
-              </a>
-            </li>
+var TextScramble = function () {
+  function TextScramble(el) {
+    _classCallCheck(this, TextScramble);
 
-           
+    this.el = el;
+    this.chars = '!<>-_\\/[]{}@€”=+*^?#________';
+    this.update = this.update.bind(this);
+  }
 
-            <li class="nav__item">
-              <a href="#contact" class="nav__link">
-                <i class="bx bx-message-square-detail nav__icon"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
+  _createClass(TextScramble, [{
+    key: 'setText',
+    value: function setText(newText) {
+      var _this = this;
 
-        <!-- lght mode test- @sosa#3400  -->
-      <!--  <i class="bx bx-moon change-theme" href="#overview"></i>-->
-      </nav>
-    </header>
-    <div id="particles-js" style="top: 0"></div>
-    <script src="assets/js/particles.js"></script>
-    <script src="assets/js/app.js"></script>
-    <script>
-      document.onkeydown = function (e) {
-        const { keyCode: c } = e;
-        if (e.ctrlKey) {
-          switch (c) {
-            case 83:
-            case 85:
-            case 65:
-            case 73:
-            case 123:
-              e.preventDefault();
-              break;
+      var oldText = this.el.innerText;
+      var length = Math.max(oldText.length, newText.length);
+      var promise = new Promise(function (resolve) {
+        return _this.resolve = resolve;
+      });
+      this.queue = [];
+      for (var i = 0; i < length; i++) {
+        var from = oldText[i] || '';
+        var to = newText[i] || '';
+        var start = Math.floor(Math.random() * 40);
+        var end = start + Math.floor(Math.random() * 40);
+        this.queue.push({ from: from, to: to, start: start, end: end });
+      }
+      cancelAnimationFrame(this.frameRequest);
+      this.frame = 0;
+      this.update();
+      return promise;
+    }
+  }, {
+    key: 'update',
+    value: function update() {
+      var output = '';
+      var complete = 0;
+      for (var i = 0, n = this.queue.length; i < n; i++) {
+        var _queue$i = this.queue[i],
+            from = _queue$i.from,
+            to = _queue$i.to,
+            start = _queue$i.start,
+            end = _queue$i.end,
+            char = _queue$i.char;
+
+        if (this.frame >= end) {
+          complete++;
+          output += to;
+        } else if (this.frame >= start) {
+          if (!char || Math.random() < 0.28) {
+            char = this.randomChar();
+            this.queue[i].char = char;
           }
+          output += '<span class="dud">' + char + '</span>';
         } else {
-          if (c === 123) e.preventDefault();
+          output += from;
         }
-      };
-      window.addEventListener(
-        "contextmenu",
-        function (e) {
-          e.preventDefault();
-        },
-        false
-      );
-    </script>
-    <!-- main - @sosa#3400  -->
-    <main class="main">
-      <!-- home - @sosa#3400  -->
-      <section class="home section" id="home">
-        <div class="home__container container grid">
-          <div class="home__data">
-            <span class="home__greeting">Welcome</span>
-            <h1 class="home__name"><sorrow id="0024">Nashuu</sorrow></h1>
-            <h3 class="home__education">
-              Nashuu's useless portfolio
-            </h3>
+      }
+      this.el.innerHTML = output;
+      if (complete === this.queue.length) {
+        this.resolve();
+      } else {
+        this.frameRequest = requestAnimationFrame(this.update);
+        this.frame++;
+      }
+    }
+  }, {
+    key: 'randomChar',
+    value: function randomChar() {
+      return this.chars[Math.floor(Math.random() * this.chars.length)];
+    }
+  }]);
 
-            <img src="assets/img/image_2023-02-01_173423933.png" alt="Image">
+  return TextScramble;
+}();
 
-          
+var phrases = [ "die"];
 
-          <div class="home__social">
-            <a href="https://instagram.com/naaxsu_" target="_blank" class="home__social-link">
-              <i class="bx bxl-instagram"></i>
-            </a>
-            <a href="https://github.com/Nashuuuuu" target="_blank" class="home__social-link">
-              <i class="bx bxl-github"></i>
-            </a>
-            <a href="https://nashu.tk" target="_blank" class="home__social-link">
-              <i class="bx bxs-terminal"></i>
-            </a>
-          </div>
+var el = document.querySelector('.text');
+var fx = new TextScramble(el);
 
-            
-            <a href="#overview" class="home__scroll">
-            <i class="bx bx-mouse home__scroll-icon"></i>
-            <span class="home__scroll-name">Scroll Down</span>
-          </a>
-        </div>
-      </section>
+var counter = 0;
+var next = function next() {
+  fx.setText(phrases[counter]).then(function () {
+    setTimeout(next, 2000);
+  });
+  counter = (counter + 1) % phrases.length;
+};
 
-          
+next();
+</script>
+  
+<style>
+@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+html,
+body {
+  font-family: 'Roboto Mono', monospace;
+   background-image: url("https://media.tenor.com/xoPW9R01ZDcAAAAC/terror-eye.gif");
+   background-color: #cccccc;
+  height: 100%;
+  overflow: hidden; /* Hide scrollbars */
+  background-size: cover;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.text {
+  font-weight: 100;
+  font-size: 35px;
+  color: #ffffff;
+}
+.dud {
+  color: #ffffff;
+}
 
-      
-
-            <p class="about__description">
-              As a talented teenager with a diverse set of skills, I would like to offer my services as a web developer, bot developer, and software developer. My strong communication skills, combined with my technical expertise, make me a valuable asset to any team. I am confident in my abilities and would welcome the opportunity to demonstrate my capabilities.
-            </p>
-            
-          </div>
-        </div>
-      </section>
-      <!-- sorrow features - @sosa#3400  -->
-      <section class="overview section" id="overview">
-        <span class="section__subtitle">~</span>
-        <h2 class="section__title">Overview</h2>
-
-        <div class="overview__container container grid">
-          <div class="overview__content">
-            <h3 class="overview__title">Languages</h3>
-
-            <div class="overview__box">
-              <div class="overview__group">
-                <div class="overview__data">
-                  <i class="bx bxs-badge-check"></i>
-
-                  <div>
-                    <h3 class="overview__name">Python</h3>
-                    <span class="overview__level">Expert</span>
-                  </div>
-                </div>
-
-                <div class="overview__data">
-                  <i class="bx bxs-badge-check"></i>
-
-                  <div>
-                    <h3 class="overview__name">Java</h3>
-                    <span class="overview__level">Basics</span>
-                  </div>
-                </div>
-
-                <div class="overview__data">
-                  <i class="bx bxs-badge-check"></i>
-
-                  <div>
-                    <h3 class="overview__name">Javascript</h3>
-                    <span class="overview__level">Expert</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="overview__group">
-                <div class="overview__data">
-                  <i class="bx bxs-badge-check"></i>
-
-                  <div>
-                    <h3 class="overview__name">HTML & CSS</h3>
-                    <span class="overview__level">Expert</span>
-                  </div>
-                </div>
-
-                <div class="overview__data">
-                  <i class="bx bxs-badge-check"></i>
-
-                  <div>
-                    <h3 class="overview__name">React.js</h3>
-                    <span class="overview__level">Basics</span>
-                  </div>
-                </div>
-
-                <div class="overview__data">
-                  <i class="bx bxs-badge-check"></i>
-
-                  <div>
-                    <h3 class="overview__name">Node.js</h3>
-                    <span class="overview__level">Expert</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="overview__content">
-            <h3 class="overview__title">Platform Experienced</h3>
-
-            <div class="overview__box">
-              <div class="overview__group">
-                <div class="overview__data">
-                  <i class="bx bxs-badge-check"></i>
-
-                  <div>
-                    <h3 class="overview__name">Discord.js</h3>
-                    <span class="overview__level">Professional‌</span>
-                  </div>
-                </div>
-
-                <div class="overview__data">
-                  <i class="bx bxs-badge-check"></i>
-
-                  <div>
-                    <h3 class="overview__name">Discord.py</h3>
-                    <span class="overview__level">Intermediate</span>
-                  </div>
-                </div>
-
-                <div class="overview__data">
-                  <i class="bx bxs-badge-check"></i>
-
-                  <div>
-                    <h3 class="overview__name">Telegram.py</h3>
-                    <span class="overview__level">Professional</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="overview__group">
-                <div class="overview__data">
-                  <i class="bx bxs-badge-check"></i>
-
-                  <div>
-                   <h3 class="overview__name">Github</h3>
-                    <span class="overview__level">Not Sure</span>
-                  </div>
-                </div>
-                <div class="overview__data">
-                  <i class="bx bxs-badge-check"></i>
-
-                  <div>
-                    <h3 class="overview__name">Soon.</h3>
-                    <span class="overview__level">\</span>
-                  </div>
-                </div>
-                <div class="overview__data">
-                  <i class="bx bxs-badge-check"></i>
-
-                  <div>
-                    <h3 class="overview__name">Soon.</h3>
-                    <span class="overview__level">\</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      
-           
-      </section>
-      <!-- vouch testimonials pgntn - @sosa#3400  -->
-      <section class="testimonial section">
-        <span class="section__subtitle"~\</span>
-        <h2 class="section__title">Friend</h2>
-
-        <div class="testimonial__container container swiper">
-          <div class="swiper-wrapper">
-            <div class="testimonial__card swiper-slide">
-              <img src="assets/img/pfps/artworks-000380995395-w81nma-t500x500.jpg" alt class="testimonial__img">
-
-              <h3 class="testimonial__name">! . BuzZaRd ⸸
-#0129</h3>
-              <p class="testimonial__description">Developer & Owner of NORG</p>
-            </div>
-
-            <div class="testimonial__card swiper-slide">
-              <img src="assets/img/pfps/jin%20pfp.jpg" alt class="testimonial__img">
-
-              <h3 class="testimonial__name">jin#7777</h3>
-              <p class="testimonial__description">Owner</p>
-            </div>
-
-            <div class="testimonial__card swiper-slide">
-              <img src="assets/img/pfps/bodo%20pfp.png" alt class="testimonial__img">
-
-              <h3 class="testimonial__name">BoDo#0001</h3>
-              <p class="testimonial__description">Owner</p>
-            </div>
-
-            <div class="testimonial__card swiper-slide">
-              <img src="assets/img/pfps/fiji%20pfp.png" alt class="testimonial__img">
-
-              <h3 class="testimonial__name">fiji#1527</h3>
-              <p class="testimonial__description">Manager</p>
-            </div>
-            <div class="testimonial__card swiper-slide">
-              <img src="assets/img/pfps/guan%20pfp.png" alt class="testimonial__img">
-
-              <h3 class="testimonial__name">guan#6969</h3>
-              <p class="testimonial__description">Manager</p>
-            </div>
-
-            <div class="testimonial__card swiper-slide">
-              <img src="assets/img/pfps/gwallahs%20pfp.jpg" alt class="testimonial__img">
-
-              <h3 class="testimonial__name">Gwallahs#2002</h3>
-              <p class="testimonial__description">Exclusive Partner</p>
-            </div>
-          </div>
-
-          <div class="swiper-pagination"></div>
-        </div>
-      </section>
-
-      <!-- contact - @sosa#3400 -->
-      <section class="contact section" id="contact">
-        <span class="section__subtitle">More Information</span>
-        <h2 class="section__title">Contact</h2>
-
-        <div class="contact__container container">
-          <div class="contact__content">
-            <div class="contact__info">
-              <div class="contact__card">
-                <i class="bx bx-mail-send contact__card-icon"></i>
-                <h3 class="contact__card-title">Email</h3>
-                <span class="contact__card-data">nashu.sharma999@gmail.com</span>
-
-                <a href="mailto:examplemail@correo.com" target="_blank" class="contact__button">
-                  Email Us
-                  <i class="bx bx-right-arrow-alt contact__button-icon"></i>
-                </a>
-              </div>
-              <div class="contact__card">
-                <i class="bx bxl-discord-alt contact__card-icon"></i>
-                <h3 class="contact__card-title">Team NORG</h3>
-                <span class="contact__card-data">discord.gg/norgop</span>
-
-                <a href="https://discord.gg/norgop" target="_blank" class="contact__button">
-                  Join now
-                  <i class="bx bx-right-arrow-alt contact__button-icon"></i>
-                </a>
-              </div>
-              <div class="contact__card">
-                <i class="bx bxs-lock-alt contact__card-icon"></i>
-                <h3 class="contact__card-title">Old Website</h3>
-                <span class="contact__card-data">nashu.tk</span>
-
-                <a href="https://nashu.tk" target="_blank" class="contact__button">
-                  Read
-                  <i class="bx bx-right-arrow-alt contact__button-icon"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <!-- footer - @sosa#3400-->
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="footer-col">
-            
-            </ul>
-          </div>
-          <div class="footer-col">
-            
-            </ul>
-          </div>
-
-          
-          </div>
-        </div>
-      </div>
-    </footer>
-    <script src="assets/js/scrollreveal.min.js"></script>
-    <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/js/mixitup.min.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
+</style>
+</body>
 </html>
